@@ -1,10 +1,14 @@
-'use strict' /* использование последней  версии  js  */;
+"use strict" /* использование последней  версии  js  */;
 
-const name = `"Генератор защитного поля"`;
-const price = 1000;
+const logItems = function (aray) {
+  let i = 0;
+  for (const element of aray) {
+    i += 1;
+    console.log(`${i} - ${element}`);
+  }
+  return;
+};
 
-let input = prompt(`'Выбран ${name}, цена за штуку ${price} кредитов'`);
+logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);
 
-input = Number(input);
-
-alert(`'Выбран ${name}, цена за штуку ${input + price} кредитов'`);
+logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
