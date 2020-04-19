@@ -1,18 +1,12 @@
 "use strict" /* использование последней  версии  js  */;
 
 const checkForSpam = function (message) {
-  const forbiddenWord = "spam";
-  const forbiddenWord1 = "sale";
-  const forbiddenWord2 = "[sale]";
-  const forbiddenWord3 = "[spam]";
-  const messageSmol = message.toLowerCase();
-  const masive = messageSmol.split(" ");
+  let masive = message.split(/\b/); //  разбивка по словам и символам (скобки, комы, знаки вопросов)
+
   for (let i = 0; i < masive.length; i += 1) {
     if (
-      forbiddenWord === masive[i] ||
-      forbiddenWord1 === masive[i] ||
-      forbiddenWord2 === masive[i] ||
-      forbiddenWord3 === masive[i]
+      masive[i].toLowerCase() === "spam" ||
+      masive[i].toLowerCase() === "sale"
     ) {
       return true;
     }
